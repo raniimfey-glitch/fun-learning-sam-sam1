@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="starGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+    <filter id="shadow512" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad512)"/>
+  <circle cx="256" cy="270" r="160" fill="#ffffff" fill-opacity="0.12"/>
+  <!-- Open Book -->
+  <g filter="url(#shadow512)">
+    <!-- Left Page -->
+    <path d="M 120 200 Q 188 180 246 210 L 246 360 Q 188 330 120 350 Z" fill="#FFFFFF"/>
+    <!-- Right Page -->
+    <path d="M 392 200 Q 324 180 266 210 L 266 360 Q 324 330 392 350 Z" fill="#FFFFFF"/>
+    <!-- Lines on Left Page -->
+    <line x1="145" y1="240" x2="225" y2="230" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="145" y1="275" x2="225" y2="265" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="145" y1="310" x2="205" y2="300" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <!-- Lines on Right Page -->
+    <line x1="287" y1="230" x2="367" y2="240" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="287" y1="265" x2="367" y2="275" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="307" y1="300" x2="367" y2="310" stroke="#0284C7" stroke-width="6" stroke-linecap="round"/>
+    <!-- Bookmark Ribbon -->
+    <path d="M 250 185 L 262 185 L 262 385 L 256 375 L 250 385 Z" fill="#EF4444"/>
+  </g>
+  <!-- Shining Star -->
+  <g transform="translate(256, 140)">
+    <polygon points="0,-48 14,-15 48,-15 20,7 30,40 0,20 -30,40 -20,7 -48,-15 -14,-15" fill="url(#starGrad512)"/>
+    <circle cx="0" cy="0" r="8" fill="#FFFBEB"/>
+  </g>
+</svg>

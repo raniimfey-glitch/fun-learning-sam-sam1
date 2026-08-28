@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="mGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="mStar192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+  </defs>
+  <!-- Full-bleed background for maskable canvas -->
+  <rect width="192" height="192" fill="url(#mGrad192)"/>
+  <circle cx="96" cy="100" r="55" fill="#ffffff" fill-opacity="0.12"/>
+  <!-- Open Book -->
+  <g>
+    <!-- Left Page -->
+    <path d="M 52 80 Q 72 73 92 82 L 92 130 Q 72 121 52 127 Z" fill="#FFFFFF"/>
+    <!-- Right Page -->
+    <path d="M 140 80 Q 120 73 100 82 L 100 130 Q 120 121 140 127 Z" fill="#FFFFFF"/>
+    <!-- Lines on Left Page -->
+    <line x1="60" y1="92" x2="84" y2="89" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+    <line x1="60" y1="103" x2="84" y2="100" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+    <!-- Lines on Right Page -->
+    <line x1="108" y1="89" x2="132" y2="92" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+    <line x1="108" y1="100" x2="132" y2="103" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bookmark Ribbon -->
+    <path d="M 94 76 L 98 76 L 98 138 L 96 135 L 94 138 Z" fill="#EF4444"/>
+  </g>
+  <!-- Shining Star -->
+  <g transform="translate(96, 60)">
+    <polygon points="0,-14 4.2,-4.4 14,-4.4 6,2 9,12 0,6 -9,12 -6,2 -14,-4.4 -4.2,-4.4" fill="url(#mStar192)"/>
+    <circle cx="0" cy="0" r="2.5" fill="#FFFBEB"/>
+  </g>
+</svg>

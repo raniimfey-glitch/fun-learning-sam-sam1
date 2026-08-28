@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bgGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="starGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+    <filter id="shadow192" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#bgGrad192)"/>
+  <circle cx="96" cy="102" r="60" fill="#ffffff" fill-opacity="0.12"/>
+  <!-- Open Book -->
+  <g filter="url(#shadow192)">
+    <!-- Left Page -->
+    <path d="M 45 75 Q 70 67 92 78 L 92 135 Q 70 124 45 131 Z" fill="#FFFFFF"/>
+    <!-- Right Page -->
+    <path d="M 147 75 Q 122 67 100 78 L 100 135 Q 122 124 147 131 Z" fill="#FFFFFF"/>
+    <!-- Lines on Left Page -->
+    <line x1="54" y1="90" x2="84" y2="86" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="54" y1="103" x2="84" y2="99" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="54" y1="116" x2="76" y2="112" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Lines on Right Page -->
+    <line x1="108" y1="86" x2="138" y2="90" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="108" y1="99" x2="138" y2="103" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="116" y1="112" x2="138" y2="116" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Bookmark Ribbon -->
+    <path d="M 94 70 L 98 70 L 98 144 L 96 140 L 94 144 Z" fill="#EF4444"/>
+  </g>
+  <!-- Shining Star -->
+  <g transform="translate(96, 52)">
+    <polygon points="0,-18 5.2,-5.6 18,-5.6 7.5,2.6 11.2,15 0,7.5 -11.2,15 -7.5,2.6 -18,-5.6 -5.2,-5.6" fill="url(#starGrad192)"/>
+    <circle cx="0" cy="0" r="3" fill="#FFFBEB"/>
+  </g>
+</svg>
