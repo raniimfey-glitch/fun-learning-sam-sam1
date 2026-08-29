@@ -1,14 +1,18 @@
-const CACHE_NAME = "ranimfay-cache-v2";
+const CACHE_NAME = "ranimfay-cache-v3";
 const STATIC_ASSETS = [
   "/",
   "/index.html",
   "/manifest.json",
-  "/icon-192.svg",
-  "/icon-512.svg",
-  "/icon-maskable-192.svg",
-  "/icon-maskable-512.svg",
-  "/icon.svg",
-  "/favicon.svg",
+  "/favicon.png",
+  "/favicon-32x32.png",
+  "/favicon-16x16.png",
+  "/icon-192.png",
+  "/icon-512.png",
+  "/icon-maskable-192.png",
+  "/icon-maskable-512.png",
+  "/apple-touch-icon.png",
+  "/app-icon.png",
+  "/og-image.jpg",
   "/data.json"
 ];
 
