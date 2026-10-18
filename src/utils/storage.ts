@@ -36,15 +36,82 @@ export const getStoredApps = (): AppItem[] => {
       updated = true;
     }
 
-    // Sync URLs for default apps if they changed in DEFAULT_APPS
+    // Direct URL replacements for updated apps
+    const urlReplacements: Record<string, string> = {
+      "https://solid-palm-tree-uw9a.vercel.app/": "https://fun-learning-tarkib-calimat-djomal.vercel.app/",
+      "https://special-fishstick-seven.vercel.app/": "https://fun-learning-soroban-v5.vercel.app/",
+      "https://bookish-guide.vercel.app/": "https://fun-learning-man-ana-v2.vercel.app/",
+      "https://fun-learning-the-big-nembers.vercel.app/": "https://fun-learning-the-big-numbers-advent.vercel.app/",
+      "https://measuring-liquid-capacity.vercel.app/": "https://fun-learning-interactive-measuring.vercel.app/",
+      "https://fun-learning-my-interactive-watch.vercel.app/": "https://fun-learning-my-interactive-clock.vercel.app/"
+    };
+
+    // Sync URLs and metadata for default apps if they changed in DEFAULT_APPS
     stored = stored.map((app) => {
-      const defaultMatch = DEFAULT_APPS.find((d) => d.name === app.name);
-      if (defaultMatch && defaultMatch.url !== app.url) {
+      let currentApp = { ...app };
+      if (urlReplacements[currentApp.url]) {
+        currentApp.url = urlReplacements[currentApp.url];
         updated = true;
-        return { ...app, url: defaultMatch.url };
       }
-      return app;
+      if (currentApp.name === "الأباكوس — سوروبان" || currentApp.name.includes("السروبان")) {
+        currentApp.name = "السروبان — الأباكوس التفاعلي";
+        currentApp.url = "https://fun-learning-soroban-v5.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name === "عالم الأعداد الكبيرة") {
+        currentApp.name = "مغامرة الأعداد الكبيرة";
+        currentApp.url = "https://fun-learning-the-big-numbers-advent.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name.includes("تركيب الكلمات")) {
+        currentApp.url = "https://fun-learning-tarkib-calimat-djomal.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name.includes("من أنا")) {
+        currentApp.url = "https://fun-learning-man-ana-v2.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name.includes("السعة") || currentApp.name.includes("السعات") || currentApp.name === "القياس التفاعلي ووحدات القياس") {
+        currentApp.name = "قياس السعات التفاعلي";
+        currentApp.url = "https://fun-learning-interactive-measuring.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name.includes("الساعة") || currentApp.name.includes("ساعتي")) {
+        currentApp.name = "ساعتي التفاعلية";
+        currentApp.url = "https://fun-learning-my-interactive-clock.vercel.app/";
+        updated = true;
+      }
+      if (currentApp.name.includes("التاء المربوطة") || currentApp.name.includes("مغامرة التاء")) {
+        currentApp.name = "التاء المربوطة والمفتوحة";
+        currentApp.url = "https://fun-learning-adventure-of-taa.vercel.app/";
+        updated = true;
+      }
+
+      const defaultMatch = DEFAULT_APPS.find((d) => d.name === currentApp.name || d.url === currentApp.url);
+      if (defaultMatch) {
+        if (defaultMatch.url !== currentApp.url) {
+          updated = true;
+          currentApp.url = defaultMatch.url;
+        }
+        if (!currentApp.nameEn && defaultMatch.nameEn) currentApp.nameEn = defaultMatch.nameEn;
+        if (!currentApp.nameFr && defaultMatch.nameFr) currentApp.nameFr = defaultMatch.nameFr;
+        if (!currentApp.descEn && defaultMatch.descEn) currentApp.descEn = defaultMatch.descEn;
+        if (!currentApp.descFr && defaultMatch.descFr) currentApp.descFr = defaultMatch.descFr;
+      }
+      return currentApp;
     });
+
+    // Remove duplicates by URL
+    const seenUrls = new Set<string>();
+    const prevLen = stored.length;
+    stored = stored.filter((app) => {
+      if (seenUrls.has(app.url)) return false;
+      seenUrls.add(app.url);
+      return true;
+    });
+    if (stored.length !== prevLen) {
+      updated = true;
+    }
 
     // Merge any missing default apps
     const storedUrls = new Set(stored.map((a) => a.url));
